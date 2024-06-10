@@ -1,0 +1,9 @@
+.shimmer-effect {
+  -webkit-mask: linear-gradient(-60deg, #000 30%, rgba(255, 0, 255, 0.2), #000 50%) right/600% 100%;
+  mask: linear-gradient(-60deg, #000 30%, rgba(255, 0, 255, 0.2), #000 50%) right/600% 100%;
+  animation: shimmer-effect-keyframes 3.5s infinite;
+ }
+
+ @keyframes shimmer-effect-keyframes {
+   100% { -webkit-mask-position: left; }
+ }
