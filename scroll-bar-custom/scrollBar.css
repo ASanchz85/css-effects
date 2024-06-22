@@ -1,0 +1,22 @@
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: #0c0c1d;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: lightgray;
+  border-radius: 3rem;
+}
+
+html::-webkit-scrollbar {
+  width: 0.6rem;
+}
