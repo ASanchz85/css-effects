@@ -1,4 +1,6 @@
-@import '../../../../theme/styles/variables.scss';
+// body {
+//   background-color: #222;
+// }
 
 .zigzag {
   position: absolute;
@@ -25,7 +27,7 @@
       width: 100%;
       height: 2px;
       transform: translateX(-100%);
-      background: linear-gradient(90deg, transparent, $soft-bg);
+      background: linear-gradient(90deg, transparent, #0f0);
       animation: animateBefore 4s linear infinite;
       animation-delay: calc(1s * var(--i));
     }
@@ -37,7 +39,7 @@
       width: 2px;
       height: 100%;
       transform: translateY(-100%);
-      background: linear-gradient(180deg, transparent, $soft-bg);
+      background: linear-gradient(180deg, transparent, #0f0);
       animation: animateAfter 4s linear infinite;
       animation-delay: calc(1s * var(--i));
     }
@@ -47,13 +49,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: $dark-bg;
+      background-color: #292929;
       inset: 10px;
-      border: 1px solid $soft-bg;
+      border: 1px solid black;
       border-radius: 15px;
 
       b {
-        color: $main-color;
+        color: #fff;
         font-weight: normal;
         transform: rotate(45deg);
         font-size: 2rem;
@@ -82,13 +84,3 @@
     transform: translateY(100%);
   }
 }
-
-// container {
-//   background: #222;
-// }
-// container div span {
-//   background-color: #292929;
-// }
-// before zigzag color gradient {
-//   background: linear-gradient(90deg, transparent, #0f0);
-// }
