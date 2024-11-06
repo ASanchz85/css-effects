@@ -1,6 +1,6 @@
-import './animatedLevel.scss'
+import './animatedBorder.scss'
 
-function AnimatedLevel ({ level }) {
+function AnimatedBorder ({ level }) {
   const displayedTitle = level.toUpperCase().split('')
 
   return (
@@ -29,4 +29,4 @@ function AnimatedLevel ({ level }) {
   )
 }
 
-export default AnimatedLevel
+export default AnimatedBorder
