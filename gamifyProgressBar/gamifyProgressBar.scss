@@ -1,57 +1,86 @@
+@import '../../../../theme/styles/variables.scss';
+
 .progress-bars {
   display: flex;
+  position: absolute;
+  top: 31%;
+  right: 5%;
   flex-direction: column;
   gap: 1rem;
   width: 100%;
   max-width: 300px;
-  margin: 0 auto;
 }
 
 .progress-bar {
   position: relative;
   width: 100%;
+  background: $main-bg;
+  border-radius: 8px;
+  padding: 8px;
 }
 
 .progress-bar label {
   font-weight: bold;
+  color: $main-color;
   margin-bottom: 0.3rem;
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
 }
 
 .bar {
-  background: #333;
-  border-radius: 8px;
-  overflow: hidden;
   position: relative;
   height: 24px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background: $dark-bg;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .fill {
   height: 100%;
-  transition: width 0.4s ease;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 0.5rem;
-  color: #fff;
-  font-weight: bold;
-}
-
-.percentage {
-  position: absolute;
-  right: 10px;
-  font-size: 0.8rem;
+  transition: width 1.5s ease-in-out;
+  position: relative;
 }
 
 .life .fill {
-  background: linear-gradient(90deg, #ff4b4b, #ff0000);
+  background: red;
+  animation: fill-animation 1.5s forwards ease-in-out;
 }
 
 .mana .fill {
-  background: linear-gradient(90deg, #4b6cff, #0000ff);
+  background: yellow;
+  animation: fill-animation 1.5s forwards ease-in-out;
 }
 
 .xp .fill {
-  background: linear-gradient(90deg, #ffde4b, #ffd700);
+  background: aqua;
+  animation: fill-animation 1.5s forwards ease-in-out;
+}
+
+.segments-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  pointer-events: none;
+}
+
+.segment {
+  border-right: 2px solid $main-bg;
+  height: 100%;
+}
+
+.segment:last-child {
+  border-right: none;
+}
+
+@keyframes fill-animation {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--i);
+  }
 }
