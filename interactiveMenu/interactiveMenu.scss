@@ -1,0 +1,130 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/responsive.scss';
+
+.student_navbar__container {
+  // background-color: $dark-bg;
+  // height: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 100px;
+
+  ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 60px;
+    background-color: $dark-bg;
+    border-radius: 15px;
+
+    li {
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 80px;
+        color: #444;
+
+        .icon_student__navbar {
+          fill: #444;
+          transition: 0, 5s;
+          z-index: 1;
+          pointer-events: none;
+        }
+      }
+
+      &:hover {
+        a .icon_student__navbar {
+          fill: #c7f80d;
+          filter: drop-shadow(0 0 15px #c7f80d);
+        }
+      }
+
+      .active {
+        .icon_student__navbar {
+          fill: #c7f80d;
+          filter: drop-shadow(0 0 15px #c7f80d);
+          transform: translateY(-40px);
+        }
+
+        .profile_icon {
+          transform: translate(7px, -32px);
+        }
+
+        p {
+          opacity: 1;
+          color: #c7f80d;
+          filter: drop-shadow(0 0 15px #c7f80d);
+          z-index: 1;
+        }
+      }
+    }
+
+    p {
+      position: absolute;
+      pointer-events: none;
+      transform: translateY(50px);
+      opacity: 0;
+      transition: 0.5s;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    #marker {
+      position: absolute;
+      top: -30px;
+      width: 80px;
+      height: 80px;
+      background-color: #55650a;
+      border-radius: 15px;
+      transition: 0.5s;
+      border-top: 2px solid #c7f80d;
+      border-left: 2px solid #c7f80d;
+      box-shadow: 0 0 0 10px #161616, 0 2px 0 9px #c7f80d;
+      transition: 0.5s;
+
+      .marker_text {
+        position: absolute;
+        top: 112px;
+        left: -10%;
+        width: 120%;
+        height: 30px;
+        background-color: #55650a;
+        box-shadow: 0 0 0 10px #161616, 0 -2px 0 9px #c7f80d;
+        border-radius: 10px;
+        border-right: 1px solid #c7f80d;
+        border-bottom: 1px solid #c7f80d;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 29px;
+        left: -32px;
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        border-top-right-radius: 15px;
+        box-shadow: 4px -4px 0 4px #161616;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 29px;
+        right: -30px;
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        border-top-left-radius: 15px;
+        box-shadow: -4px -4px 0 4px #161616;
+      }
+    }
+  }
+}
