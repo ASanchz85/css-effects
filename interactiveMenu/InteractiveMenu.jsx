@@ -77,7 +77,7 @@ function StudentNavbar () {
             <p>Chat</p>
           </NavLink>
         </li>
-        <div id='marker'>
+        <div id='marker' ref={markerRef}>
           <span className='marker_text'></span>
         </div>
       </ul>
