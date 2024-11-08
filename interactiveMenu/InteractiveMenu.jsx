@@ -7,9 +7,11 @@ import {
   SettingsFilledIcon,
   ChatFilledIcon
 } from '../../../../shared/components/svg'
-import './studentNavbar.scss'
+// or any other svg icons, not needed of turning them into react components
+import './interactiveMenu.scss'
 
 function StudentNavbar () {
+  // if react -> use this approach, for vanilla the code commented below the component declaration
   const markerRef = useRef(null)
 
   useEffect(() => {
@@ -22,7 +24,6 @@ function StudentNavbar () {
         .closest('.student_navbar__container')
         .getBoundingClientRect()
 
-      // Set marker position based on active link position
       markerRef.current.style.left = `${linkRect.left - navRect.left}px`
       markerRef.current.style.width = `${linkRect.width}px`
     }
